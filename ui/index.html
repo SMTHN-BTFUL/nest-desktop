@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Nest</title>
+<link rel="icon" href="hummingbird.jpg" type="image/jpeg">
+<link rel="stylesheet" href="launcher.css">
+</head>
+<body>
+<div class="wrap">
+  <img class="logo" src="hummingbird.jpg" alt="The Nest — SMTHN.BTFUL hummingbird logo">
+  <h1>The Nest</h1>
+  <p class="sub">SMTHN.BTFUL dashboard</p>
+
+  <!-- Shown while a saved secret is being used -->
+  <div id="opening" class="panel hidden">
+    <p>Opening The Nest&hellip;</p>
+    <button id="cancelBtn" type="button" class="linklike">Cancel &mdash; change saved secret</button>
+  </div>
+
+  <!-- Shown when no secret is saved yet -->
+  <div id="setup" class="panel hidden">
+    <p class="explain">
+      The Nest lives behind Vercel sign-in protection, so the app needs a
+      <strong>protection bypass secret</strong> to open straight to your dashboard.
+    </p>
+    <ol class="steps">
+      <li>Open <strong>Vercel dashboard</strong> &rarr; project <strong>today-widget</strong></li>
+      <li><strong>Settings</strong> &rarr; <strong>Deployment Protection</strong></li>
+      <li>Under <strong>Protection Bypass for Automation</strong>, copy the secret<br>
+        <span class="muted">(create one labelled &ldquo;Nest desktop app&rdquo; if there isn&rsquo;t one yet)</span></li>
+      <li>Paste it below &mdash; it&rsquo;s saved only on this computer</li>
+    </ol>
+    <form id="secretForm">
+      <input id="secretInput" type="password" placeholder="Paste bypass secret&hellip;" autocomplete="off" spellcheck="false">
+      <button id="saveBtn" type="submit">Save &amp; open The Nest</button>
+    </form>
+    <p id="formError" class="error hidden"></p>
+    <button id="skipBtn" type="button" class="linklike">Continue without a secret (Vercel sign-in page will appear)</button>
+  </div>
+</div>
+<script src="launcher.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# The Nest desktop app — never commit secrets or build output.
+private-keys/
+src-tauri/target/
+src-tauri/gen/
+node_modules/
+.DS_Store
+The-Nest-*-setup.exe
+nest.exe
